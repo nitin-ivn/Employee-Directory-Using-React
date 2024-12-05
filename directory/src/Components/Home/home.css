@@ -1,0 +1,26 @@
+.home{
+
+}
+
+.title{
+    height: 8vh;
+}
+
+.add,
+.export{
+    padding-inline: 1rem;
+    padding-block: 0.3rem;
+    border-radius: 6px;
+}
+
+.add{
+    background-color: var(--background-btn);
+    border: none;
+    color: white;
+}
+
+.export{
+    border: 1px solid #dcdfe3;
+    background-color: transparent;
+    color: #b7bec8;
+}

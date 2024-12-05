@@ -1,0 +1,45 @@
+
+.topbar{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    height: 7vh;
+    min-height: 3vh;
+    border-radius: 5px;
+    box-shadow: 0px 1px 4px 1px #d8d6d6;
+}
+
+.search-bar{
+    flex: 1;
+    border: none;
+    margin-left: 3px;
+    font-size: 15px;
+}
+
+.details{
+    display: flex;
+    min-width: 20vw;
+}
+
+.nav-com{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-pic{
+    width: 40px;
+    height:35px;
+    border-radius: 50%;
+}
+
+.font{
+    font-size: 13px;
+}
+
+.profile-btn{
+    max-height: 48px;
+    min-height: 48px;
+    border: none;
+    background-color: transparent;
+}
