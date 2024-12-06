@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Layout() {
-  const [sidebarWidth,setSideBarWidth] = useState(7);
+  const [sidebarWidth,setSideBarWidth] = useState(14);
   return (
     <div>
         
