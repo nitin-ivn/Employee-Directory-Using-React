@@ -24,3 +24,67 @@
     background-color: transparent;
     color: #b7bec8;
 }
+
+.filter-btn{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.filter-alpha{
+    background-color: #eaebee;
+    border: none;
+    border-radius: 4px;
+    padding-block: 0.5rem;
+    padding-inline: 0.7rem;
+}
+
+.filter-alpha:hover{
+    background-color: var(--background-btn);
+    color: white;
+}
+
+.filter-con{
+    min-height: 4vh;
+    max-height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius:5px;
+    border: 1px solid var(--background-btn);
+    background-color: #fdf2f2;
+    color: var(--background-btn);
+}
+
+.custom-select{
+    height: 80%;
+    border: 1px solid var(--background-btn);
+    max-width: fit-content;
+}
+
+.filter-apply{
+    background-color: var(--background-btn);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    transition: all 0.3s;
+}
+.filter-reset{
+    background-color: white;
+    color: var(--background-btn);
+    border: 1px solid var(--background-btn);
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.filter-reset:hover{
+    background-color: var(--background-btn);
+    color: white;
+}
+
+.filter-apply:hover{
+    background-color: white;
+    color: var(--background-btn);
+    border: 1px solid var(--background-btn);
+}

@@ -32,6 +32,10 @@ function Sidebar({widthChange}) {
               <NavLink to = '/access' className='sidebar-btn'><img src="/Horizontalnav/assign user.svg" alt="" />Access rights</NavLink>
             </div>
           </div>
+
+          <div>
+            
+          </div>
       </div>
     </div>
   )
