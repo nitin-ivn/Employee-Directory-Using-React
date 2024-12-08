@@ -1,9 +1,11 @@
 import React from 'react'
 import './home.css'
+import HomeEmp from './HomeEmp';
+import { useSelector } from 'react-redux';
 
 function Home() {
   let filterHTML = [];
-
+  const employee = useSelector(state => state.EmployeeReducer.employee || []);
   for (let i = 65; i <= 90; i++) {
       filterHTML.push(
           <button className = "filter-alpha">{String.fromCharCode(i)}</button>
@@ -14,8 +16,8 @@ function Home() {
     <div className='home'>
       <div className='d-flex title justify-content-between'>
         <div className='d-flex flex-column'>
-          <h5>Employees</h5>
-          <p>Find all of your company's employee accounts and thier associated roles</p>
+          <h5 className='font-header'>Employees</h5>
+          <p className='font-p'>Find all of your company's employee accounts and thier associated roles</p>
         </div>
 
         <div className='d-flex gap-3 align-items-center'>
@@ -32,7 +34,7 @@ function Home() {
       </div>
 
       <div>
-        <div className='d-flex gap-1 grow-1'>  
+        <div className='d-flex gap-1 flex-wrap'>  
           <button className='filter-btn'><img src="/Vector.png" alt="" /></button>
           {filterHTML}
         </div>
@@ -58,6 +60,38 @@ function Home() {
         <div className='d-flex gap-3'>
           <button className='filter-reset px-3'>Reset</button>
           <button className='filter-apply px-3'>Apply</button>
+        </div>
+      </div>
+
+      <div className='mt-3 display-con rounded-top-3'>
+        <div className='p-3 d-flex justify-content-between'>
+            <div className='d-flex gap-2 align-items-center'>
+              <img className='cursor-pointer h-75' src="/arrow-turn left -down.png" alt="" />
+              <button className='common-btn px-3 py-1' style={{opacity: "0.6"}}>Delete</button>
+            </div>
+
+            <div><img className='cursor-pointer me-4' src="/table-add.png" alt="" /></div>
+        </div>
+
+        <div className='overflow-hidden'>
+          <div className="row header">
+            <div className='col-1 d-flex justify-content-center'><input type="checkbox" name="" id="" /></div>
+            <div className='col-2 th'>USER <img className='fil-ic' src="/unfold.png" alt="" /></div>
+            <div className='col th'>LOCATION <img className='fil-ic' src="/unfold.png" alt="" /></div>
+            <div className='col th'>DEPARTMENT <img className='fil-ic' src="/unfold.png" alt="" /></div>
+            <div className='col-2 th'>ROLE <img className='fil-ic' src="/unfold.png" alt="" /></div>
+            <div className="col th">EMP NO <img className='fil-ic' src="/unfold.png" alt="" /></div>
+            <div className='col th'>STATUS <img className='fil-ic' src="/unfold.png" alt="" /></div>
+            <div className="col th">JOIN DT <img className='fil-ic' src="/unfold.png" alt="" /></div>
+            <div className='col-1 d-flex justify-content-center'>...</div>
+          </div>
+
+          {
+            employee.map((emp, index) => (
+              <HomeEmp key={index} {...emp} />
+            ))
+          }
+          
         </div>
       </div>
     </div>

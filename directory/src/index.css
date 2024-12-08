@@ -2,3 +2,7 @@
     --background-btn : #f44848;
     --background-hover: #fde9e9;
 }
+
+.cursor-pointer{
+    cursor: pointer;
+}

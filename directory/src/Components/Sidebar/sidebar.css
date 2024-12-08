@@ -1,6 +1,5 @@
 .sidebar{
     background-color: white;
-    position: relative;
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -10,6 +9,22 @@
     width: 6vw;
     height: 100vh;
     transition: all 0.3s;
+    container-type: inline-size;
+    container-name: sidebar-responsive;
+}
+
+@media(max-width: 1115px) {
+    .res{
+        display: none;
+    }
+
+    .sidebar-btn{
+        justify-content: center;
+    }
+}
+
+.res{
+    margin: 0px;
 }
 
 .logo{
@@ -26,9 +41,11 @@
 
 .title-sidebar{
     color: #bdbfc2;
+    font-size: 0.8vw;
 }
 
 .sidebar-btn{
+    overflow: hidden;
     color:  black;
     text-decoration: none;
     display: flex;

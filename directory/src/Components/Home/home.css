@@ -88,3 +88,82 @@
     color: var(--background-btn);
     border: 1px solid var(--background-btn);
 }
+
+
+.display-con{
+    background-color: white;
+    box-shadow: 0px 1px 4px 1px #d8d6d6;
+}
+
+.common-btn{
+    background-color: var(--background-btn);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    transition: all 0.3s;
+}
+
+.font-header{
+    font-size: 1.3vw;
+}
+
+.font-p{
+    font-size: 1vw;
+}
+
+.header{
+    background-color: #f6f6f7;
+    height: 5.3vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid #d6d5d5;
+}
+
+.th{
+    color: #222a38;
+    font-size: 0.7vw;
+    display: flex;
+    align-items:baseline;
+}
+
+.fil-ic{
+    cursor: pointer;
+    margin-left: 5px;
+    max-height: 10px;
+}
+
+.td{
+    color: black;
+    font-size: small;
+}
+
+.emp{
+    font-weight: 600;
+    height: 5.3vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid #d6d5d5;
+}
+
+.emp-pic{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.font-email{
+    color:#72757a;
+}
+
+.status{
+    color: green;
+    background-color: #e7f4e8;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    max-width: 4rem;
+    border-radius: 5px;
+}
