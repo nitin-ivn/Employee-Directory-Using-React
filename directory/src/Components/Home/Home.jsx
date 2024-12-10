@@ -86,12 +86,7 @@ function Home() {
             <div className='col-1 d-flex justify-content-center'>...</div>
           </div>
 
-          {
-            employee.map((emp, index) => (
-              <HomeEmp key={index} {...emp} />
-            ))
-          }
-          
+          <HomeEmp empArray={employee} />
         </div>
       </div>
     </div>
