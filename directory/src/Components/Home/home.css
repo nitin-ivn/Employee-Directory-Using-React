@@ -37,6 +37,12 @@
     border-radius: 4px;
     padding-block: 0.5rem;
     padding-inline: 0.7rem;
+    transition: 0.3s all;
+}
+
+.active-alpha{
+    background-color: var(--background-btn);
+    color: white;
 }
 
 .filter-alpha:hover{
@@ -158,9 +164,19 @@
     color:#72757a;
 }
 
-.status{
+.active-status{
     color: green;
     background-color: #e7f4e8;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    max-width: 4rem;
+    border-radius: 5px;
+}
+
+.inactive{
+    color: red;
+    background-color: #fae7e7;
     padding: 5px;
     display: flex;
     justify-content: center;

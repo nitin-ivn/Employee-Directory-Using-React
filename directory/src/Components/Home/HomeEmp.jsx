@@ -26,7 +26,7 @@ function HomeEmp({ empArray }) {
                     <div className='col-2 td'>{emp.role}</div>
                     <div className="col td">TZ00{emp.id}</div>
                     <div className='col td'>
-                        <div className={`status ${emp.status ? "active" : "inactive"}`}>
+                        <div className={`status ${emp.status ? "active-status" : "inactive"}`}>
                         {emp.status ? "Active" : "Inactive"}
                         </div>
                     </div>

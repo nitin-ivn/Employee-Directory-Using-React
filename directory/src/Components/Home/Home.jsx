@@ -1,16 +1,75 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './home.css'
 import HomeEmp from './HomeEmp';
 import { useSelector } from 'react-redux';
 
 function Home() {
+  const [tempFilters, setTempFilters] = useState({
+    status: '0',
+    location: '',
+    department: '',
+  })
+
+  const [filters,setFilters] = useState({
+    status: '0',
+    location: '',
+    department: '',
+  });
+
+
+  const [alphabet, setAlphabet] = useState("");
   let filterHTML = [];
   const employee = useSelector(state => state.EmployeeReducer.employee || []);
+
+  const handleAlphabetChange = (e) => {
+    setAlphabet(e)
+  }
+
   for (let i = 65; i <= 90; i++) {
+    let alpha = String.fromCharCode(i);
       filterHTML.push(
-          <button className = "filter-alpha">{String.fromCharCode(i)}</button>
+          <button 
+          key={alpha}
+          onClick={() => handleAlphabetChange(alphabet === alpha?'':alpha)} 
+          className = {`filter-alpha  ${alphabet === alpha ? 'active-alpha' : ''}`}>{alpha}</button>
       );
   }
+
+  const handleFilterChange = (key, value) => {
+    setTempFilters((prev) => ({
+      ...prev,
+      [key]: value
+    }));
+  };
+
+  const applyFilters = () => {
+    setFilters(tempFilters);
+  }
+
+  const removeFilters = () => {
+    setTempFilters({
+      status: '0',
+      location: '',
+      department: '',
+    });
+
+    setFilters({
+      status: '0',
+      location: '',
+      department: '',
+    });
+
+    setAlphabet('')
+  }
+
+  const filteredEmployee = employee.filter((emp) => {
+    return (
+      (filters.status === '0' || filters.status === '1' && emp.status || filters.status === '2' && !emp.status) &&
+      (filters.location === '' || filters.location === emp.location) &&
+      (filters.department === '' || filters.department === emp.department) &&
+      (alphabet === '' || emp.name.startsWith(alphabet))
+    )
+  })
 
   return (
     <div className='home'>
@@ -44,22 +103,28 @@ function Home() {
         <div className='d-flex align-items-center gap-2'>
           <p className='m-0'>Filter</p>
           <img className='h-75' src="Vector.png" alt="" />
-          <select className='form-select form-select-sm w-75 ms-2 custom-select' name="" id="">
-            <option value="">Status</option>
+          <select value = {tempFilters.status} onChange={(e) => handleFilterChange('status',e.target.value)} className='form-select form-select-sm w-75 ms-2 custom-select' name="" id="">
+            <option value="0">Status</option>
+            <option value="1">Active</option>
+            <option value="2">InActive</option>
           </select>
 
-          <select className='form-select form-select-sm ms-2 custom-select' name="" id="">
+          <select value={tempFilters.location} onChange={(e) => handleFilterChange('location',e.target.value)} className='form-select form-select-sm ms-2 custom-select' name="" id="">
             <option value="">Location</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Ahmedabad">Ahmedabad</option>
           </select>
 
-          <select className='form-select form-select-sm ms-2 custom-select' name="" id="">
+          <select value={tempFilters.department} onChange={(e) => handleFilterChange('department',e.target.value)} className='form-select form-select-sm ms-2 custom-select' name="" id="">
             <option value="">Department</option>
+            <option value="Product Engg">Product Engg</option>
+            <option value="Management">Management</option>
           </select>
         </div>
 
         <div className='d-flex gap-3'>
-          <button className='filter-reset px-3'>Reset</button>
-          <button className='filter-apply px-3'>Apply</button>
+          <button onClick={removeFilters} className='filter-reset px-3'>Reset</button>
+          <button onClick={applyFilters} className='filter-apply px-3'>Apply</button>
         </div>
       </div>
 
@@ -86,7 +151,7 @@ function Home() {
             <div className='col-1 d-flex justify-content-center'>...</div>
           </div>
 
-          <HomeEmp empArray={employee} />
+          <HomeEmp empArray={filteredEmployee}/>
         </div>
       </div>
     </div>
