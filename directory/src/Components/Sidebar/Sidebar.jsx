@@ -21,20 +21,16 @@ function Sidebar({widthChange}) {
             <p className='title-sidebar'>ALL</p>
             <div className='d-flex flex-column justify-content-center'>
               <button className='sidebar-btn'><img src="/Horizontalnav/Dashboard.svg" alt="" /><p className='res'>Dashboard</p></button>
-              <NavLink to='/' className='sidebar-btn btn-active'><img src="/Horizontalnav/Employees.svg" alt="" /><p className='res'>Employees</p></NavLink>
+              <NavLink to='/' className={({isActive}) => `sidebar-btn ${isActive ? 'btn-active':''}`}><img src="/Horizontalnav/Employees.svg" alt="" /><p className='res'>Employees</p></NavLink>
             </div>
           </div>
 
           <div className='all mt-4'>
             <p className='title-sidebar'>ROLE / USER MANAGEMENT</p>
             <div className='d-flex flex-column justify-content-center'>
-              <NavLink to='/roles' className='sidebar-btn'><img src="/Horizontalnav/Roles.svg"/><p className='res'>Roles</p></NavLink>
-              <NavLink to = '/access' className='sidebar-btn'><img src="/Horizontalnav/assign user.svg" alt="" /><p className='res'>Access Rights</p></NavLink>
+              <NavLink to='/roles' className={({isActive}) => `sidebar-btn ${isActive ? 'btn-active':''}`}><img className='svg' src="/Horizontalnav/Roles.svg"/><p className='res'>Roles</p></NavLink>
+              <NavLink to = '/access' className={({isActive}) => `sidebar-btn ${isActive ? 'btn-active':''}`}><img src="/Horizontalnav/assign user.svg" alt="" /><p className='res'>Access Rights</p></NavLink>
             </div>
-          </div>
-
-          <div>
-            
           </div>
       </div>
     </div>

@@ -11,6 +11,7 @@ import Roles from './Components/Roles/Roles.jsx'
 import Access from './Components/Access/Access.jsx'
 import { store } from './store/store.js'
 import {Provider} from 'react-redux'
+import RoleDetails from './Components/RoleDetails/RoleDetails.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
         <Route path = '' element = {<Home />} />
         <Route path='/roles' element = {<Roles />}/>
         <Route path='/access' element = {<Access />}/>
+        <Route path='/role/:roleid' element = {<RoleDetails />}></Route>
       </Route>
     </>
   )
