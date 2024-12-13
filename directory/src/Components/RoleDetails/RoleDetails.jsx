@@ -10,6 +10,10 @@ function RoleDetails() {
           <p className='desc'>All the roles are cofigured here</p>
         </div>
       </div>
+
+      <div className=''>
+
+      </div>
     </div>
   )
 }

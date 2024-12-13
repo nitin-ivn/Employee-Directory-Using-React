@@ -103,19 +103,22 @@ function Home() {
         <div className='d-flex align-items-center gap-2'>
           <p className='m-0'>Filter</p>
           <img className='h-75' src="Vector.png" alt="" />
-          <select value = {tempFilters.status} onChange={(e) => handleFilterChange('status',e.target.value)} className='form-select form-select-sm w-75 ms-2 custom-select' name="" id="">
+          <select value = {tempFilters.status} onChange={(e) => handleFilterChange('status',e.target.value)} 
+          className='form-select form-select-sm w-75 ms-2 custom-select' name="" id="">
             <option value="0">Status</option>
             <option value="1">Active</option>
             <option value="2">InActive</option>
           </select>
 
-          <select value={tempFilters.location} onChange={(e) => handleFilterChange('location',e.target.value)} className='form-select form-select-sm ms-2 custom-select' name="" id="">
+          <select value={tempFilters.location} onChange={(e) => handleFilterChange('location',e.target.value)} 
+          className='form-select form-select-sm ms-2 custom-select' name="" id="">
             <option value="">Location</option>
             <option value="Hyderabad">Hyderabad</option>
             <option value="Ahmedabad">Ahmedabad</option>
           </select>
 
-          <select value={tempFilters.department} onChange={(e) => handleFilterChange('department',e.target.value)} className='form-select form-select-sm ms-2 custom-select' name="" id="">
+          <select value={tempFilters.department} onChange={(e) => handleFilterChange('department',e.target.value)} 
+          className='form-select form-select-sm ms-2 custom-select' name="" id="">
             <option value="">Department</option>
             <option value="Product Engg">Product Engg</option>
             <option value="Management">Management</option>
