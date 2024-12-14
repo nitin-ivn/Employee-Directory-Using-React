@@ -1,6 +1,7 @@
 :root{
     --background-btn : #f44848;
     --background-hover: #fde9e9;
+    --foreground-color: #959ca3;
 }
 
 .cursor-pointer{

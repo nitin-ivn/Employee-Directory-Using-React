@@ -56,7 +56,7 @@ function Roles() {
         </div>
       </div>
 
-      <div className='mt-3 p-3 filter-con'>
+      <div className='mt-3 filter-con'>
         <div className='d-flex align-items-center gap-2'>
           <p className='m-0'>Filter</p>
           <img className='h-75' src="Vector.png" alt="" />

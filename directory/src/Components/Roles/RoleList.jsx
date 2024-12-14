@@ -42,7 +42,7 @@ function RoleList({roleArr}) {
                   </div>     
                 </div>
 
-                <NavLink to= '/role/123' className='view m-0 mt-3 text-dark text-end'><p>View all Employees <img src="/Vector.svg" alt="" /></p></NavLink>
+                <NavLink to= {`/role/${role.roleId}`} className='view m-0 mt-3 text-dark text-end'><p>View all Employees <img src="/Vector.svg" alt="" /></p></NavLink>
               </div>
           </div>
           )

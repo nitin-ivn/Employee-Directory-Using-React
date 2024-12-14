@@ -1,3 +1,16 @@
+.bg-fore{
+    color: var(--foreground-color);
+}
+
 .desc{
-    color: #959ca3;
+    color: var(--foreground-color);
+}
+
+.description{
+    margin-top: 1.2rem;
+}
+
+.role-det{
+    display: flex;
+    gap: 1rem;
 }

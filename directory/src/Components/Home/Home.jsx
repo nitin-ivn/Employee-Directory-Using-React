@@ -82,24 +82,24 @@ function Home() {
         <div className='d-flex gap-3 align-items-center'>
           <button className='export'>
             <img className='me-1' src="/Interface/Export.svg" alt="" />
-            EXPORT
+            <span className='btn-text'>EXPORT</span>
             </button>
           <button className='add'>
             <img className='me-2' src="/Interface/Add.svg" alt="" />
-            ADD EMPLOYEE
+            <span className='btn-text'>ADD EMPLOYEE</span>
             </button>
         </div>
 
       </div>
 
       <div>
-        <div className='d-flex gap-1 flex-wrap'>  
+        <div className='d-flex gap-1 mt-2 flex-wrap'>  
           <button className='filter-btn'><img src="/Vector.png" alt="" /></button>
           {filterHTML}
         </div>
       </div>
 
-      <div className='mt-3 p-3 filter-con'>
+      <div className='mt-3 filter-con'>
         <div className='d-flex align-items-center gap-2'>
           <p className='m-0'>Filter</p>
           <img className='h-75' src="Vector.png" alt="" />
