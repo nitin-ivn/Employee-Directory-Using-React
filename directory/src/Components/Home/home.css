@@ -86,7 +86,7 @@
 .filter-apply{
     background-color: var(--background-btn);
     color: white;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 4px;
     font-size: 13px;
     transition: all 0.3s;

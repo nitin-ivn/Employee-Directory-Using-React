@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     employee: [{
         id: 2341,
+        roleId: 207,
         name: "Stan Edgar",
         img: "/Employee/1.jpeg",
         email: "edgar@company.com",
@@ -14,6 +15,7 @@ const initialState = {
     },
     {
         id: 2342,
+        roleId: 206,
         name: "Stan Edgar",
         img: "/Employee/1.jpeg",
         email: "edgar@company.com",
@@ -35,10 +37,15 @@ export const EmployeeSlice = createSlice({
 
         removeEmployee: (state, action) => {
 
-        }
+        },
     }
 })
 
-export const {addEmployee, removeEmployee} = EmployeeSlice.actions;
+export const filterEmployeeByRole = (roleID) => (state) => {
+    const filteredEmp = state.EmployeeReducer.employee.filter(emp => emp.roleId === roleID); 
+    return filteredEmp;
+}
+
+export const {addEmployee, removeEmployee, filterEmployeeByRole2} = EmployeeSlice.actions;
 
 export default EmployeeSlice.reducer;

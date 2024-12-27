@@ -25,6 +25,14 @@ const initialState =  {
         roleId: 205,
         name: 'Senior Developer',
         department: 'UI/UX'
+    },{
+        roleId: 206,
+        name: 'Business Analyst',
+        department: 'Management'
+    },{
+        roleId: 207,
+        name: 'Full-Stack Developer',
+        department: 'Product Engg'
     }]
 }
 

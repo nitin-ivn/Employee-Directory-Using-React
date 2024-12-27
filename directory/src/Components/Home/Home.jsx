@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './home.css'
 import HomeEmp from './HomeEmp';
 import { useSelector } from 'react-redux';
+import AddEmployee from '../AddEmployee/AddEmployee';
 
 function Home() {
   const [tempFilters, setTempFilters] = useState({
@@ -84,10 +85,7 @@ function Home() {
             <img className='me-1' src="/Interface/Export.svg" alt="" />
             <span className='btn-text'>EXPORT</span>
             </button>
-          <button className='add'>
-            <img className='me-2' src="/Interface/Add.svg" alt="" />
-            <span className='btn-text'>ADD EMPLOYEE</span>
-            </button>
+          <AddEmployee />
         </div>
 
       </div>

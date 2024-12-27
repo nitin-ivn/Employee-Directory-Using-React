@@ -1,5 +1,6 @@
 import React from 'react'
-import { NavLink } from 'react-router'
+import { useDispatch, useSelector } from 'react-redux'
+import { NavLink} from 'react-router'
 
 function RoleList({roleArr}) {
   return (
@@ -7,7 +8,7 @@ function RoleList({roleArr}) {
       {
         roleArr.map((role, index) => {
           return (
-            <div>
+            <div key={role.roleId}>
               <div className='role d-flex flex-column gap-1'>
                 <div className='role-col mb-3'>
                   <p className='fw-bold mb-1 text-dark'>{role.name}</p>
