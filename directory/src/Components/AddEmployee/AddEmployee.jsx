@@ -6,9 +6,22 @@ import FloatingLabel from 'react-bootstrap/esm/FloatingLabel';
 
 function AddEmployee() {
   const [show, setShow] = useState(false);
+  const [validated, setValidated] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+      setValidated(true);
+    } else {
+      setValidated(false);
+      setShow(false);
+    }
+  }
 
   return (
     <>
@@ -22,7 +35,7 @@ function AddEmployee() {
           <Modal.Title>Modal heading</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form noValidate validated = {validated} onSubmit={handleSubmit}>
 
             <Form.Group className="mb-3" controlId="">
             <FloatingLabel
@@ -30,7 +43,7 @@ function AddEmployee() {
                 label="Name"
                 className="mb-3"
             >
-                <Form.Control type="name" placeholder="Name" />
+                <Form.Control type="name" placeholder="Name" required/>
             </FloatingLabel>
             </Form.Group>
 
@@ -40,20 +53,20 @@ function AddEmployee() {
                 label="Email"
                 className="mb-3"
             >
-                <Form.Control type="email" placeholder="Email" />
+                <Form.Control type="email" placeholder="Email" required/>
             </FloatingLabel>
             </Form.Group>
 
             <Form.Group className='d-flex gap-2 mb-2'>
-                <Form.Select className='d-inline' aria-label="Default select example">
-                    <option>Role</option>
+                <Form.Select className='d-inline' aria-label="Default select example" required>
+                    <option value= "">Role</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                 </Form.Select>
 
-                <Form.Select className='d-inline' aria-label="Default select example">
-                    <option>Department</option>
+                <Form.Select className='d-inline' aria-label="Default select example" required>
+                    <option value="">Department</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -61,14 +74,18 @@ function AddEmployee() {
             </Form.Group>
 
             <Form.Group className='d-flex gap-2 mb-2'>
-                <Form.Select className='d-inline' aria-label="Default select example">
-                    <option>Location</option>
+                <Form.Select className='d-inline' aria-label="Default select example" required>
+                    <option value="">Location</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                 </Form.Select>
 
-                <input className='d-inline w-100 px-2' type="date" name="" id="" />
+                <Form.Control 
+                className="d-inline w-100 px-2" 
+                type="date" 
+                required
+              />
             </Form.Group>
 
 
@@ -80,16 +97,19 @@ function AddEmployee() {
               <Form.Control as="textarea" rows={3} />
             </Form.Group>
 
-          </Form>
-        </Modal.Body>
+
+           
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button type='submit' className="filter-apply px-3 py-2" onClick={handleClose}>
+          <Button type='submit' className="filter-apply px-3 py-2">
             Save Changes
           </Button>
         </Modal.Footer>
+
+        </Form>
+        </Modal.Body>
       </Modal>
     </>
   )
