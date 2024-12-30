@@ -32,7 +32,8 @@ export const EmployeeSlice = createSlice({
     initialState,
     reducers: {
         addEmployee: (state, action) => {
-
+            const emp = action.payload;
+            state.employee.push(emp);
         },
 
         removeEmployee: (state, action) => {
